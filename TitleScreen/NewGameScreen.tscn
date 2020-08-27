@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Fonts/brookh2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://TitleScreen/ReturnToTitle.gd" type="Script" id=2]
+
+[node name="NewGameScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 525.0
+margin_top = 324.0
+margin_right = 755.0
+margin_bottom = 395.0
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 230.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0.501961, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "New Game"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+margin_top = 51.0
+margin_right = 230.0
+margin_bottom = 71.0
+text = "Back"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

@@ -7,19 +7,19 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 1.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 126, 71.0146 )
+extents = Vector2( 126, 66.7108 )
 
 [node name="Chamelion" type="KinematicBody2D"]
 script = ExtResource( 1 )

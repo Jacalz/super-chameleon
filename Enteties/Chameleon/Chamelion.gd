@@ -17,16 +17,16 @@ func horizontal_move(right: bool) -> void:
 	$AnimatedSprite.flip_h = right
 	$AnimatedSprite.play("Walk")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	velocity.y = min(velocity.y + GRAVITY, TERMINAL_VELOCITY)
 	
 	var grndfriction = false
 	
 	# Movement for the player
-	if Input.is_action_pressed("move_right"):
+	if Input.is_action_pressed("ui_right"):
 		velocity.x = min(velocity.x + HORIZONTAL_ACCELERATION, MAX_SPEED)
 		horizontal_move(true)
-	elif Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("ui_left"):
 		velocity.x = max(velocity.x - HORIZONTAL_ACCELERATION, -MAX_SPEED)
 		horizontal_move(false)
 	else:
@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		grndfriction = true
 	
 	if is_on_floor():
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_HEIGHT
 		if grndfriction:
 			velocity.x = lerp(velocity.x, 0, 0.3)

@@ -9,7 +9,6 @@
 [ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=8]
 
 [sub_resource type="StreamTexture" id=1]
-load_path = "res://.import/cameleon_1.png-22b03f763416c418ac90ec8461ecb7d5.stex"
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -37,47 +36,51 @@ stretch_mode = 4
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 136.0
 margin_right = 1040.0
-margin_bottom = 392.0
+margin_bottom = 346.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 518.0
-margin_bottom = 256.0
+margin_bottom = 210.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="MenuButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
-margin_top = 34.0
+margin_top = 11.0
 margin_right = 518.0
-margin_bottom = 94.0
+margin_bottom = 71.0
+scene_to_load = "res://TitleScreen/Screens/NewGameScreen.tscn"
 
 [node name="MenuButton2" parent="Menu/CenterRow/Buttons" instance=ExtResource( 7 )]
-margin_top = 98.0
+margin_top = 75.0
 margin_right = 518.0
-margin_bottom = 158.0
+margin_bottom = 135.0
+scene_to_load = "res://TitleScreen/Screens/ContinueGameScreen.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
-margin_top = 162.0
+margin_top = 139.0
 margin_right = 518.0
-margin_bottom = 222.0
+margin_bottom = 199.0
+scene_to_load = "res://TitleScreen/Screens/SettingsScreen.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
 margin_right = 1040.0
-margin_bottom = 256.0
+margin_bottom = 210.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 27.0
-margin_right = 491.0
-margin_bottom = 256.0
+margin_left = 259.0
+margin_top = 105.0
+margin_right = 259.0
+margin_bottom = 105.0
 texture = SubResource( 1 )
 stretch_mode = 3
 
 [node name="VersionLabel" type="Label" parent="Menu"]
-margin_top = 396.0
+margin_top = 350.0
 margin_right = 1040.0
 margin_bottom = 560.0
 size_flags_horizontal = 3

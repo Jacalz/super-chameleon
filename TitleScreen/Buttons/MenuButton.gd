@@ -1,3 +1,3 @@
 extends Button
 
-export(String) var scene_to_load
+export(String, FILE, "*.tscn") var scene_to_load

@@ -13,6 +13,10 @@ const JUMP_HEIGHT = -400
 # Velocity of our wonderful chamelion
 var velocity = Vector2()
 
+func horizontal_move(right: bool) -> void:
+	$AnimatedSprite.flip_h = right
+	$AnimatedSprite.play("Walk")
+
 func _physics_process(delta: float) -> void:
 	velocity.y = min(velocity.y + GRAVITY, TERMINAL_VELOCITY)
 	
@@ -21,9 +25,12 @@ func _physics_process(delta: float) -> void:
 	# Movement for the player
 	if Input.is_action_pressed("move_right"):
 		velocity.x = min(velocity.x + HORIZONTAL_ACCELERATION, MAX_SPEED)
+		horizontal_move(true)
 	elif Input.is_action_pressed("move_left"):
 		velocity.x = max(velocity.x - HORIZONTAL_ACCELERATION, -MAX_SPEED)
+		horizontal_move(false)
 	else:
+		$AnimatedSprite.play("Idle")
 		grndfriction = true
 	
 	if is_on_floor():

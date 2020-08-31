@@ -1,13 +1,15 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/brookh2-small.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Enteties/cameleon_1.png" type="Texture" id=2]
 [ext_resource path="res://temp-icon-text.png" type="Texture" id=3]
 [ext_resource path="res://TitleScreen/Buttons/NewGameButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://TitleScreen/Buttons/SettingsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TitleScreen/Animations/FadeIn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://TitleScreen/Buttons/ContinueGameButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=8]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/cameleon_1.png-22b03f763416c418ac90ec8461ecb7d5.stex"
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -71,7 +73,7 @@ size_flags_vertical = 3
 margin_left = 27.0
 margin_right = 491.0
 margin_bottom = 256.0
-texture = ExtResource( 2 )
+texture = SubResource( 1 )
 stretch_mode = 3
 
 [node name="VersionLabel" type="Label" parent="Menu"]

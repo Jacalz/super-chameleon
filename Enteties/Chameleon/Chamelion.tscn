@@ -8,14 +8,14 @@
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
-"loop": true,
+"loop": false,
 "name": "Idle",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 6.0
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -48,14 +48,8 @@ frame = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-current = true
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
-
-[node name="Background" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Transparent = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true

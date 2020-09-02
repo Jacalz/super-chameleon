@@ -27,8 +27,6 @@ func horizontal_move(right: bool):
 	show()
 
 func on_timeout():
-	print("Timeout reached")
-	
 	if !transparent && idle:
 		$AnimationPlayer.play("Transparent")
 		transparent = true

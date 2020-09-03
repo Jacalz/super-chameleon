@@ -12,7 +12,7 @@ func on_timeout():
 		play("Transparent")
 		camouflaged = true
 
-func show():
+func disable():
 	idle = true
 	
 	timer.set_paused(true)
@@ -20,7 +20,7 @@ func show():
 		play_backwards("Transparent")
 		camouflaged = false
 
-func hide():
+func enable():
 	timer.set_paused(false)
 	idle = true
 

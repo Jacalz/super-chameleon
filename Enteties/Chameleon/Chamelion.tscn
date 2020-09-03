@@ -50,7 +50,7 @@ animation = "Walk"
 rotation = 1.5708
 shape = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="Camouflage" type="AnimationPlayer" parent="."]
 anims/Transparent = SubResource( 3 )
 script = ExtResource( 5 )
 

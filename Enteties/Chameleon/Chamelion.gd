@@ -16,7 +16,7 @@ var velocity = Vector2()
 func horizontal_move(right: bool):
 	$AnimatedSprite.flip_h = right
 	$AnimatedSprite.play("Walk")
-	$AnimationPlayer.show()
+	$Camouflage.disable()
 
 func _physics_process(_delta: float) -> void:
 	velocity.y = min(velocity.y + GRAVITY, TERMINAL_VELOCITY)
@@ -32,13 +32,13 @@ func _physics_process(_delta: float) -> void:
 		horizontal_move(false)
 	else:
 		$AnimatedSprite.play("Idle")
-		$AnimationPlayer.hide()
+		$Camouflage.enable()
 		grndfriction = true
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_HEIGHT
-			$AnimationPlayer.show()
+			$Camouflage.disable()
 		if grndfriction:
 			velocity.x = lerp(velocity.x, 0, 0.3)
 	else:

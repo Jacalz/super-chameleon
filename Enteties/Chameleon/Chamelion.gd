@@ -1,12 +1,5 @@
 extends KinematicBody2D
 
-# Tells other enteties if they can see us or not
-export(bool) var transparent
-var idle = true
-
-var timer = self
-var thread
-
 # Defines the up direction in the world.
 const UP = Vector2(0, -1)
 
@@ -23,32 +16,7 @@ var velocity = Vector2()
 func horizontal_move(right: bool):
 	$AnimatedSprite.flip_h = right
 	$AnimatedSprite.play("Walk")
-	idle = false
-	show()
-
-func on_timeout():
-	if !transparent && idle:
-		$AnimationPlayer.play("Transparent")
-		transparent = true
-
-func show():
-	timer.set_paused(true)
-	if transparent:
-		$AnimationPlayer.play_backwards("Transparent")
-		transparent = false
-
-func start_timer(_params):
-	timer.connect("timeout", self, "on_timeout")
-	timer.autostart = true
-	timer.start(5)
-
-func _ready():
-	timer = Timer.new()
-	add_child(timer)
-	
-	thread = Thread.new()
-	thread.start(self, "start_timer", null, 0)
-	thread.wait_to_finish()
+	$AnimationPlayer.show()
 
 func _physics_process(_delta: float) -> void:
 	velocity.y = min(velocity.y + GRAVITY, TERMINAL_VELOCITY)
@@ -64,14 +32,13 @@ func _physics_process(_delta: float) -> void:
 		horizontal_move(false)
 	else:
 		$AnimatedSprite.play("Idle")
-		timer.set_paused(false)
-		idle = true
+		$AnimationPlayer.hide()
 		grndfriction = true
 	
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = JUMP_HEIGHT
-			idle = false
+			$AnimationPlayer.show()
 		if grndfriction:
 			velocity.x = lerp(velocity.x, 0, 0.3)
 	else:

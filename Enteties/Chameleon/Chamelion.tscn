@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/Chamelion.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/chameleon-walk-1.png" type="Texture" id=2]
 [ext_resource path="res://Enteties/Chameleon/chameleon-walk-2.png" type="Texture" id=3]
 [ext_resource path="res://Enteties/Chameleon/chameleon-walk-3.png" type="Texture" id=4]
+[ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -18,7 +19,7 @@ animations = [ {
 "speed": 6.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 30.146
 height = 44.7859
 
@@ -47,10 +48,11 @@ animation = "Walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Transparent = SubResource( 3 )
+script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true

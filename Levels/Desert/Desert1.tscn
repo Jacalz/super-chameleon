@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Enteties/Chameleon/Chamelion.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enteties/Chameleon/Chameleon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tiles/sandblock-top.png" type="Texture" id=2]
 [ext_resource path="res://Levels/Desert/Background/desert-clouds.png" type="Texture" id=3]
 
@@ -32,8 +32,8 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 
 [node name="Desert1" type="Node2D"]
 
-[node name="Chamelion" parent="." instance=ExtResource( 1 )]
-position = Vector2( 224.643, 46.25 )
+[node name="Chameleon" parent="." instance=ExtResource( 1 )]
+position = Vector2( 222, 88 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )

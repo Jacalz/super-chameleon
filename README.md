@@ -12,3 +12,4 @@ The restriction around the project was that it was going to be built using only 
 ## License
 
 - The code and the Godot project are shared under the `GPL-v3.0-or-later` license and was created by [Jacob Alzén](https://github.com/Jacalz).
+- All assets are shared under the `Creative Commons By-NC-SA 4.0` license´ and created by Hugo Ekekrantz.

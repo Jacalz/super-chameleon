@@ -1,22 +1,28 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/chameleon-walk-3.png" type="Texture" id=2]
 [ext_resource path="res://Enteties/Chameleon/chameleon-walk-1.png" type="Texture" id=3]
 [ext_resource path="res://Enteties/Chameleon/chameleon-walk-2.png" type="Texture" id=4]
 [ext_resource path="res://Enteties/Chameleon/chameleon.gd" type="Script" id=5]
+[ext_resource path="res://Enteties/Chameleon/chameleon-jump-1.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": false,
 "name": "Idle",
-"speed": 6.0
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 1.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -44,7 +50,7 @@ script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Walk"
+animation = "Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

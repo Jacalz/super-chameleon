@@ -43,9 +43,12 @@ func _physics_process(delta: float):
 		$Camouflage.enable()
 		grndfriction = true
 	
-	if is_on_floor() && grndfriction:
-		velocity.x = lerp(velocity.x, 0, 0.3)
-	elif !grndfriction:
-		velocity.x = lerp(velocity.x, 0, 0.1)
+	if is_on_floor():
+		if grndfriction:
+			velocity.x = lerp(velocity.x, 0, 0.3)
+	else:
+		$AnimatedSprite.play("Jump")
+		if !grndfriction:
+			velocity.x = lerp(velocity.x, 0, 0.1)
 	
 	velocity = move_and_slide(velocity, UP)

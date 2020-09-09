@@ -1,5 +1,10 @@
 extends KinematicBody2D
 
+# Onready variables for our nodes
+onready var sprite = $AnimatedSprite
+onready var camo = $Camouflage
+onready var evolve = $Mouth
+
 # Defines the up direction in the world.
 const UP = Vector2(0, -1)
 
@@ -14,12 +19,13 @@ var velocity = Vector2()
 
 func horizontal_move(direction: int):
 	if direction == 1:
-		$AnimatedSprite.flip_h = true
+		sprite.flip_h = true
 	else:
-		$AnimatedSprite.flip_h = false
+		sprite.flip_h = false
 	
-	$AnimatedSprite.play("Walk")
-	$Camouflage.disable()
+	sprite.play("Walk" + evolve.anim)
+	
+	camo.disable()
 
 func get_horizontal_input() -> int:
 	return -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
@@ -27,7 +33,7 @@ func get_horizontal_input() -> int:
 func _input(event):
 	if is_on_floor() && event.is_action("ui_up"):
 		velocity.y = JUMP_HEIGHT
-		$Camouflage.disable()
+		camo.disable()
 
 func _physics_process(delta: float):
 	velocity.y = min(velocity.y + GRAVITY * delta, TERMINAL_VELOCITY)
@@ -39,15 +45,16 @@ func _physics_process(delta: float):
 		velocity.x = lerp(velocity.x, HORIZONTAL_SPEED * direction, 0.2)
 		horizontal_move(direction)
 	else:
-		$AnimatedSprite.play("Idle")
-		$Camouflage.enable()
+		sprite.play("Idle" + evolve.anim)
+		camo.enable()
 		grndfriction = true
 	
 	if is_on_floor():
 		if grndfriction:
 			velocity.x = lerp(velocity.x, 0, 0.3)
 	else:
-		$AnimatedSprite.play("Jump")
+		sprite.play("Jump" + evolve.anim)
+
 		if !grndfriction:
 			velocity.x = lerp(velocity.x, 0, 0.1)
 	

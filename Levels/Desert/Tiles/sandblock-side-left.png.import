@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chameleon-walk-2.png-cfc3f221c2c998700e9b9faeb5938b59.stex"
+path="res://.import/sandblock-side-left.png-13044d4190e669a61137a64ad9ffc384.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enteties/Chameleon/chameleon-walk-2.png"
-dest_files=[ "res://.import/chameleon-walk-2.png-cfc3f221c2c998700e9b9faeb5938b59.stex" ]
+source_file="res://Levels/Desert/Tiles/sandblock-side-left.png"
+dest_files=[ "res://.import/sandblock-side-left.png-13044d4190e669a61137a64ad9ffc384.stex" ]
 
 [params]
 

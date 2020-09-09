@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chameleon-walk-1.png-e981c2ab17463bb204c51a18f11276bc.stex"
+path="res://.import/chameleon-evolved-walk-2.png-2470696c8cb16efe8af3d219647d554f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enteties/Chameleon/chameleon-walk-1.png"
-dest_files=[ "res://.import/chameleon-walk-1.png-e981c2ab17463bb204c51a18f11276bc.stex" ]
+source_file="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-2.png"
+dest_files=[ "res://.import/chameleon-evolved-walk-2.png-2470696c8cb16efe8af3d219647d554f.stex" ]
 
 [params]
 

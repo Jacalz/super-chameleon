@@ -14,34 +14,34 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Walk_evolved",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Idle_evolved",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "Jump_evolved",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walk_evolved",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 10 ) ],
 "loop": false,
-"name": "Idle",
+"name": "Jump",
 "speed": 1.0
 } ]
 
@@ -65,8 +65,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 20.0
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 25.0
+height = 30.0
 
 [node name="Chameleon" type="KinematicBody2D"]
 script = ExtResource( 5 )
@@ -100,6 +101,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mouth"]
+rotation = 1.5708
 shape = SubResource( 4 )
 
 [node name="Timer" type="Timer" parent="Mouth"]

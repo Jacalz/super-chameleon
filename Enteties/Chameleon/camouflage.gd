@@ -5,7 +5,7 @@ export(bool) var camouflaged
 
 onready var timer = $Timer
 
-func on_timeout():
+func _on_Timer_timeout():
 	if !camouflaged:
 		play("Transparent")
 		camouflaged = true
@@ -20,6 +20,3 @@ func disable():
 func enable():
 	if timer.is_stopped():
 		timer.start()
-
-func _ready():
-	timer.connect("timeout", self, "on_timeout")

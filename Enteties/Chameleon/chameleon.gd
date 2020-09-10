@@ -3,7 +3,8 @@ extends KinematicBody2D
 # Onready variables for our nodes
 onready var sprite = $AnimatedSprite
 onready var camo = $Camouflage
-onready var evolve = $Mouth
+onready var evolve = $Evolve
+onready var shape = $CollisionShape2D.shape
 
 # Defines the up direction in the world.
 const UP = Vector2(0, -1)
@@ -17,13 +18,23 @@ const JUMP_HEIGHT = -7 * 64
 # Velocity of our wonderful chameleon
 var velocity = Vector2()
 
+var evolve_anim = ""
+
+func _on_Evolve_timeout():
+	shape.height = 45
+	evolve_anim = ""
+
+func _on_evolving():
+	shape.height = 70
+	evolve_anim = "_evolved"
+
 func horizontal_move(direction: int):
 	if direction == 1:
 		sprite.flip_h = true
 	else:
 		sprite.flip_h = false
 	
-	sprite.play("Walk" + evolve.anim)
+	sprite.play("Walk" + evolve_anim)
 	
 	camo.disable()
 
@@ -45,7 +56,7 @@ func _physics_process(delta: float):
 		velocity.x = lerp(velocity.x, HORIZONTAL_SPEED * direction, 0.2)
 		horizontal_move(direction)
 	else:
-		sprite.play("Idle" + evolve.anim)
+		sprite.play("Idle" + evolve_anim)
 		camo.enable()
 		grndfriction = true
 	
@@ -53,7 +64,7 @@ func _physics_process(delta: float):
 		if grndfriction:
 			velocity.x = lerp(velocity.x, 0, 0.3)
 	else:
-		sprite.play("Jump" + evolve.anim)
+		sprite.play("Jump" + evolve_anim)
 
 		if !grndfriction:
 			velocity.x = lerp(velocity.x, 0, 0.1)

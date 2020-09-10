@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-2.png" type="Texture" id=2]
@@ -6,7 +6,7 @@
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-1.png" type="Texture" id=4]
 [ext_resource path="res://Enteties/Chameleon/chameleon.gd" type="Script" id=5]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-2.png" type="Texture" id=6]
-[ext_resource path="res://Enteties/Chameleon/mouth.gd" type="Script" id=7]
+[ext_resource path="res://Enteties/Chameleon/evolve.gd" type="Script" id=7]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-1.png" type="Texture" id=8]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-3.png" type="Texture" id=9]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-jump-1.png" type="Texture" id=10]
@@ -19,35 +19,35 @@ animations = [ {
 "name": "Idle_evolved",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": false,
-"name": "Idle",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "Jump_evolved",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Walk_evolved",
-"speed": 6.0
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 1.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 1.0
+"frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walk_evolved",
+"speed": 6.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 30.146
-height = 44.7859
+radius = 30.0
+height = 45.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "Transparent"
@@ -64,10 +64,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ) ]
 }
-
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 25.0
-height = 30.0
 
 [node name="Chameleon" type="KinematicBody2D"]
 script = ExtResource( 5 )
@@ -93,17 +89,12 @@ position = Vector2( 0, -50 )
 current = true
 zoom = Vector2( 0.75, 0.75 )
 
-[node name="Mouth" type="Area2D" parent="."]
-position = Vector2( -40, 0 )
+[node name="Evolve" type="Node2D" parent="."]
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mouth"]
-rotation = 1.5708
-shape = SubResource( 4 )
-
-[node name="Timer" type="Timer" parent="Mouth"]
+[node name="Timer" type="Timer" parent="Evolve"]
 wait_time = 30.0
 one_shot = true
+[connection signal="timeout" from="Camouflage/Timer" to="Camouflage" method="_on_Timer_timeout"]
+[connection signal="on_evolving" from="Evolve" to="." method="_on_evolving"]
+[connection signal="timeout" from="Evolve/Timer" to="." method="_on_Evolve_timeout"]

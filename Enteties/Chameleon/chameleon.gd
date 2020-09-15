@@ -1,5 +1,8 @@
 extends KinematicBody2D
 
+var is_grounded = true
+signal on_grounded_updated(is_grounded)
+
 # Onready variables for our nodes
 onready var sprite = $AnimatedSprite
 onready var camo = $Camouflage
@@ -10,10 +13,10 @@ onready var shape = $CollisionShape2D.shape
 const UP = Vector2(0, -1)
 
 # Constants for defining how the chameleon can move
-const GRAVITY = 1000
+const GRAVITY = 1450
 const TERMINAL_VELOCITY = 600
 const HORIZONTAL_SPEED = 7 * 64
-const JUMP_HEIGHT = -7 * 64
+const JUMP_HEIGHT = -10 * 64
 
 # Velocity of our wonderful chameleon
 var velocity = Vector2()
@@ -38,11 +41,11 @@ func horizontal_move(direction: int):
 	
 	camo.disable()
 
-func get_horizontal_input() -> int:
-	return -int(Input.is_action_pressed("ui_left")) + int(Input.is_action_pressed("ui_right"))
+func get_horizontal_input() -> float:
+	return -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
 
 func _input(event):
-	if is_on_floor() && event.is_action("ui_up"):
+	if is_on_floor() && event.is_action_pressed("ui_up"):
 		velocity.y = JUMP_HEIGHT
 		camo.disable()
 
@@ -62,11 +65,17 @@ func _physics_process(delta: float):
 	
 	if is_on_floor():
 		if grndfriction:
-			velocity.x = lerp(velocity.x, 0, 0.3)
+			velocity.x = lerp(velocity.x, 0, 0.35)
 	else:
 		sprite.play("Jump" + evolve_anim)
 
 		if !grndfriction:
-			velocity.x = lerp(velocity.x, 0, 0.1)
+			velocity.x = lerp(velocity.x, 0, 0.15)
 	
 	velocity = move_and_slide(velocity, UP)
+	
+	var was_grounded = is_grounded
+	is_grounded = is_on_floor()
+	
+	if was_grounded == null || is_grounded != was_grounded:
+		emit_signal("on_grounded_updated", is_grounded)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/desert-pyramids.png-c531ff25afda86288c0312e772207ff7.stex"
+path="res://.import/sandblock-floating-middle.png-8bcb36de261eb92c27dfab14e5fb4bc9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enteties/Chameleon/Sprites/Evolved/desert-pyramids.png"
-dest_files=[ "res://.import/desert-pyramids.png-c531ff25afda86288c0312e772207ff7.stex" ]
+source_file="res://Levels/Desert/Tiles/sandblock-floating-middle.png"
+dest_files=[ "res://.import/sandblock-floating-middle.png-8bcb36de261eb92c27dfab14e5fb4bc9.stex" ]
 
 [params]
 

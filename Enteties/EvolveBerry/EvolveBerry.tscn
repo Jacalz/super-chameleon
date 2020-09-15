@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://temp-icon.png" type="Texture" id=1]
+[ext_resource path="res://Enteties/EvolveBerry/Sprites/Berry.png" type="Texture" id=1]
 [ext_resource path="res://Enteties/EvolveBerry/EvolveBerry.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 35.0
-height = 40.0
+radius = 20.0
+height = 10.0
 
 [node name="EvolveBerry" type="Area2D"]
 script = ExtResource( 2 )

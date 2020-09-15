@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-2.png" type="Texture" id=2]
@@ -11,27 +11,13 @@
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-3.png" type="Texture" id=9]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-jump-1.png" type="Texture" id=10]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-jump-1.png" type="Texture" id=11]
+[ext_resource path="res://Enteties/Chameleon/camera.gd" type="Script" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Idle_evolved",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "Jump_evolved",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 4 ) ],
-"loop": false,
-"name": "Idle",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
@@ -39,14 +25,29 @@ animations = [ {
 "name": "Walk",
 "speed": 6.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle_evolved",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Walk_evolved",
 "speed": 6.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 1.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 30.0
+radius = 29.0
 height = 45.0
 
 [sub_resource type="Animation" id=3]
@@ -88,6 +89,13 @@ one_shot = true
 position = Vector2( 0, -50 )
 current = true
 zoom = Vector2( 0.75, 0.75 )
+smoothing_enabled = true
+drag_margin_left = 0.1
+drag_margin_top = 0.75
+drag_margin_right = 0.1
+script = ExtResource( 12 )
+
+[node name="ShiftTween" type="Tween" parent="Camera2D"]
 
 [node name="Evolve" type="Node2D" parent="."]
 script = ExtResource( 7 )
@@ -95,6 +103,7 @@ script = ExtResource( 7 )
 [node name="Timer" type="Timer" parent="Evolve"]
 wait_time = 30.0
 one_shot = true
+[connection signal="on_grounded_updated" from="." to="Camera2D" method="_on_Chameleon_on_grounded_updated"]
 [connection signal="timeout" from="Camouflage/Timer" to="Camouflage" method="_on_Timer_timeout"]
 [connection signal="on_evolving" from="Evolve" to="." method="_on_evolving"]
 [connection signal="timeout" from="Evolve/Timer" to="." method="_on_Evolve_timeout"]

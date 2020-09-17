@@ -17,7 +17,7 @@ func _check_facing():
 		tween.interpolate_property(self, "position:x", position.x, target_offset, TWEEN_DURATION, Tween.TRANS_SINE, Tween.EASE_OUT)
 		tween.start()
 
-func _process(delta):
+func _process(_delta):
 	_check_facing()
 	prev_pos = get_camera_position()
 

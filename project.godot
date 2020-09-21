@@ -20,6 +20,10 @@ config/description="A 2D platformer made in Godot for a school project."
 run/main_scene="res://TitleScreen/TitleScreen.tscn"
 config/icon="res://temp-icon.png"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=1280
@@ -65,9 +69,15 @@ move_right={
 "events": [  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="berries"
+2d_physics/layer_4="world"
+
 [rendering]
 
 quality/2d/use_pixel_snap=true
-threads/thread_model=2
 environment/default_clear_color=Color( 0.14902, 0.192157, 0.219608, 1 )
 environment/default_environment="res://default_env.tres"

@@ -14,7 +14,7 @@ const UP = Vector2(0, -1)
 
 # Constants for defining how the chameleon can move
 const GRAVITY = 1450
-const TERMINAL_VELOCITY = 600
+const TERMINAL_VELOCITY = 800
 const HORIZONTAL_SPEED = 7 * 64
 const JUMP_HEIGHT = -10 * 64
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-2.png" type="Texture" id=2]
@@ -12,38 +12,39 @@
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-jump-1.png" type="Texture" id=10]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-jump-1.png" type="Texture" id=11]
 [ext_resource path="res://Enteties/Chameleon/camera.gd" type="Script" id=12]
+[ext_resource path="res://Enteties/Chameleon/debug.gd" type="Script" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
-"loop": false,
-"name": "Jump_evolved",
-"speed": 1.0
+"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walk_evolved",
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": false,
-"name": "Jump",
+"name": "Jump_evolved",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle_evolved",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "Idle",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Walk_evolved",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Idle_evolved",
-"speed": 5.0
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 1.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -67,6 +68,7 @@ tracks/0/keys = {
 }
 
 [node name="Chameleon" type="KinematicBody2D"]
+collision_mask = 2147483656
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -103,6 +105,36 @@ script = ExtResource( 7 )
 [node name="Timer" type="Timer" parent="Evolve"]
 wait_time = 30.0
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DebugDisplay" type="MarginContainer" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = -10.0
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DebugDisplay"]
+margin_right = 1280.0
+margin_bottom = 700.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DebugDisplay/HBoxContainer"]
+margin_bottom = 700.0
+alignment = 2
+
+[node name="FPS" type="Label" parent="CanvasLayer/DebugDisplay/HBoxContainer/VBoxContainer"]
+margin_top = 668.0
+margin_bottom = 682.0
+
+[node name="Memory" type="Label" parent="CanvasLayer/DebugDisplay/HBoxContainer/VBoxContainer"]
+margin_top = 686.0
+margin_bottom = 700.0
 [connection signal="on_grounded_updated" from="." to="Camera2D" method="_on_Chameleon_on_grounded_updated"]
 [connection signal="timeout" from="Camouflage/Timer" to="Camouflage" method="_on_Timer_timeout"]
 [connection signal="on_evolving" from="Evolve" to="." method="_on_evolving"]

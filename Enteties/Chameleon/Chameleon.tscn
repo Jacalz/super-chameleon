@@ -16,11 +16,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Walk_evolved",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Walk",
@@ -30,6 +25,11 @@ animations = [ {
 "loop": false,
 "name": "Jump_evolved",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walk_evolved",
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
@@ -119,6 +119,7 @@ script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+debug = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DebugDisplay"]
 margin_right = 1280.0

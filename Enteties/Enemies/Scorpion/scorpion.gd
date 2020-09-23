@@ -5,6 +5,7 @@ const SPEED = 100
 const GRAVITY = 1450
 
 var velocity = Vector2()
+var is_player = false
 
 onready var LeftD = $FloorDetector/Left
 onready var RightD = $FloorDetector/Right

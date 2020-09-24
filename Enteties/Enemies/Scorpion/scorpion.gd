@@ -5,7 +5,6 @@ const SPEED = 100
 const GRAVITY = 1450
 
 var velocity = Vector2()
-var is_player = false
 
 onready var LeftD = $FloorDetector/Left
 onready var RightD = $FloorDetector/Right
@@ -21,3 +20,15 @@ func _physics_process(delta: float) -> void:
 		velocity.x *= -1
 	
 	velocity.y = move_and_slide(velocity, UP).y
+
+
+func _on_KillerInstinct_body_entered(body):
+	if body.name == "Chameleon":
+		if body.evolve_anim == "":
+				get_tree().reload_current_scene()
+		else:
+			if !is_on_wall():
+				 body.evolve_anim = ""
+			else:
+				queue_free()
+			

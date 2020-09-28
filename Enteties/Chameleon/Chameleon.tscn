@@ -139,6 +139,7 @@ margin_top = 686.0
 margin_bottom = 700.0
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {

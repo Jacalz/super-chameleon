@@ -39,6 +39,9 @@ func _physics_process(delta: float) -> void:
 func _on_KillerInstinct_body_entered(body):
 	if body.name == "Chameleon":
 		if body.evolve_anim == "":
+				ASprite.position.y += 15
+				ASprite.play("attack")
+				yield(get_tree().create_timer(0.5), "timeout")
 				get_tree().reload_current_scene()
 		else:
 			if !body.sees_enemy:

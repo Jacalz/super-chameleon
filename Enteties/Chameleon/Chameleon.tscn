@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-2.png" type="Texture" id=2]
@@ -13,17 +13,13 @@
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-jump-1.png" type="Texture" id=11]
 [ext_resource path="res://Enteties/Chameleon/camera.gd" type="Script" id=12]
 [ext_resource path="res://Enteties/Chameleon/debug.gd" type="Script" id=13]
+[ext_resource path="res://Enteties/Chameleon/menuPopup.gd" type="Script" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": false,
 "name": "Jump",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": false,
-"name": "Jump_evolved",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
@@ -44,6 +40,11 @@ animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "Idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "Jump_evolved",
 "speed": 1.0
 } ]
 
@@ -136,7 +137,60 @@ margin_bottom = 682.0
 [node name="Memory" type="Label" parent="CanvasLayer/DebugDisplay/HBoxContainer/VBoxContainer"]
 margin_top = 686.0
 margin_bottom = 700.0
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuPopup" type="Popup" parent="CanvasLayer/CenterContainer"]
+pause_mode = 2
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 20.0
+margin_bottom = 20.0
+script = ExtResource( 14 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/MenuPopup"]
+margin_right = 125.0
+margin_bottom = 44.0
+
+[node name="Resume" type="Button" parent="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Resume game"
+
+[node name="Restart" type="Button" parent="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Restart level"
+
+[node name="Exit" type="Button" parent="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Exit to titlescreen"
+
+[node name="EnemyFinderL" type="RayCast2D" parent="."]
+position = Vector2( -50, 0 )
+rotation = 1.5708
+enabled = true
+cast_to = Vector2( 0, 80 )
+collision_mask = 2
+collide_with_areas = true
+
+[node name="EnemyFinderR" type="RayCast2D" parent="."]
+position = Vector2( 50, 0 )
+rotation = -1.5708
+enabled = true
+cast_to = Vector2( 0, 80 )
+collision_mask = 2
+collide_with_areas = true
 [connection signal="on_grounded_updated" from="." to="Camera2D" method="_on_Chameleon_on_grounded_updated"]
 [connection signal="timeout" from="Camouflage/Timer" to="Camouflage" method="_on_Timer_timeout"]
 [connection signal="on_evolving" from="Evolve" to="." method="_on_evolving"]
 [connection signal="timeout" from="Evolve/Timer" to="." method="_on_Evolve_timeout"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer/Resume" to="CanvasLayer/CenterContainer/MenuPopup" method="_on_Resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer/Restart" to="CanvasLayer/CenterContainer/MenuPopup" method="_on_Restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer/Exit" to="CanvasLayer/CenterContainer/MenuPopup" method="_on_Exit_pressed"]

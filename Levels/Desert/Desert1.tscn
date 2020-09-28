@@ -295,7 +295,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 [node name="Desert1" type="Node2D"]
 
 [node name="Chameleon" parent="." instance=ExtResource( 1 )]
-position = Vector2( 222, 88 )
+position = Vector2( 205.045, 147.459 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 13 )
@@ -353,4 +353,4 @@ position = Vector2( 1517.55, 44.092 )
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Scorpion" parent="Enemies" instance=ExtResource( 17 )]
-position = Vector2( 1378.86, 27.4642 )
+position = Vector2( 1419.59, 18.8775 )

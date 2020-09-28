@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scorpion-idle.png-1396d2b760ae345bb29b1b002f474f65.stex"
+path="res://.import/scorpion-walk-2.png-0c1d7081f20b7cc875960bf73344b354.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enteties/Enemies/Scorpion/Sprites/scorpion-idle.png"
-dest_files=[ "res://.import/scorpion-idle.png-1396d2b760ae345bb29b1b002f474f65.stex" ]
+source_file="res://Enteties/Enemies/Scorpion/Sprites/scorpion-walk-2.png"
+dest_files=[ "res://.import/scorpion-walk-2.png-0c1d7081f20b7cc875960bf73344b354.stex" ]
 
 [params]
 

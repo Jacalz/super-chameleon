@@ -8,6 +8,8 @@ onready var sprite = $AnimatedSprite
 onready var camo = $Camouflage
 onready var evolve = $Evolve
 onready var shape = $CollisionShape2D.shape
+onready var enemyL = $EnemyFinderL
+onready var enemyR = $EnemyFinderR
 
 # Defines the up direction in the world.
 const UP = Vector2(0, -1)
@@ -22,6 +24,7 @@ const JUMP_HEIGHT = -10 * 64
 var velocity = Vector2()
 
 var evolve_anim = ""
+var sees_enemy = false
 
 func _on_Evolve_timeout():
 	shape.height = 45
@@ -54,6 +57,16 @@ func _physics_process(delta: float):
 	
 	var grndfriction = false
 	
+	if global_position.y > 400:
+		get_tree().reload_current_scene()
+	
+	if sprite.flip_h and enemyR.is_colliding():
+		sees_enemy = true
+	elif !sprite.flip_h and enemyL.is_colliding():
+		sees_enemy = true
+	else:
+		sees_enemy = false
+		
 	var direction = get_horizontal_input()
 	if direction != 0:
 		velocity.x = lerp(velocity.x, HORIZONTAL_SPEED * direction, 0.2)

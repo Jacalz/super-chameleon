@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://TitleScreen/Screens/Screen.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/brookh2.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -19,27 +26,28 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 584.0
-margin_top = 324.0
-margin_right = 695.0
-margin_bottom = 395.0
+margin_left = 560.0
+margin_top = 331.0
+margin_right = 720.0
+margin_bottom = 389.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 111.0
-margin_bottom = 47.0
-custom_fonts/font = ExtResource( 2 )
+margin_right = 160.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0.501961, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 3
 text = "Label"
 
 [node name="Back" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 51.0
-margin_right = 111.0
-margin_bottom = 71.0
+margin_top = 36.0
+margin_right = 160.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 2 )
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false

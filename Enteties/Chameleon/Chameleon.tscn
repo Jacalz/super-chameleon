@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-2.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Enteties/Chameleon/camera.gd" type="Script" id=12]
 [ext_resource path="res://Enteties/Chameleon/debug.gd" type="Script" id=13]
 [ext_resource path="res://Enteties/Chameleon/menuPopup.gd" type="Script" id=14]
+[ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -67,6 +68,15 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.392157 ) ]
 }
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 15 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 15 )
 
 [node name="Chameleon" type="KinematicBody2D"]
 collision_mask = 2147483656
@@ -161,17 +171,20 @@ margin_bottom = 44.0
 [node name="Resume" type="Button" parent="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer"]
 margin_right = 12.0
 margin_bottom = 20.0
+custom_fonts/font = SubResource( 4 )
 text = "Resume game"
 
 [node name="Restart" type="Button" parent="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer"]
 margin_right = 12.0
 margin_bottom = 20.0
+custom_fonts/font = SubResource( 5 )
 text = "Restart level"
 
 [node name="Exit" type="Button" parent="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer"]
 margin_right = 12.0
 margin_bottom = 20.0
-text = "Exit to titlescreen"
+custom_fonts/font = SubResource( 6 )
+text = "  Exit to titlescreen  "
 
 [node name="EnemyFinderL" type="RayCast2D" parent="."]
 position = Vector2( -50, 0 )

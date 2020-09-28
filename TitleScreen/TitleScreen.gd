@@ -4,7 +4,7 @@ var scene_path_to_load
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Menu/CenterRow/Buttons/MenuButton.grab_focus()
+	$Menu/CenterRow/Buttons/NewGame.grab_focus()
 	for button in $Menu/CenterRow/Buttons.get_children():
 		button.connect("pressed", self, "on_Button_pressed", [button.scene_to_load])
 

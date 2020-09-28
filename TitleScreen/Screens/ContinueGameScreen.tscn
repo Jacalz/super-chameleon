@@ -5,12 +5,12 @@
 [node name="Control" instance=ExtResource( 1 )]
 
 [node name="VBoxContainer" parent="CenterContainer" index="0"]
-margin_left = 481.0
-margin_right = 799.0
+margin_left = 432.0
+margin_right = 848.0
 
 [node name="Label" parent="CenterContainer/VBoxContainer" index="0"]
-margin_right = 318.0
+margin_right = 416.0
 text = "Continue Game"
 
 [node name="Back" parent="CenterContainer/VBoxContainer" index="1"]
-margin_right = 318.0
+margin_right = 416.0

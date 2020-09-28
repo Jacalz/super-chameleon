@@ -8,11 +8,11 @@
 [ext_resource path="res://TitleScreen/Buttons/ContinueGameButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://TitleScreen/TitleScreen.gd" type="Script" id=8]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 48
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 1 )
 
 [node name="TitleScreen" type="Control"]
@@ -33,7 +33,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
-margin_right = 1230.0
+margin_right = 1040.0
 margin_bottom = 128.0
 
 [node name="TextureRect" type="TextureRect" parent="Menu/HBoxContainer"]
@@ -46,17 +46,17 @@ margin_left = 132.0
 margin_top = 40.0
 margin_right = 948.0
 margin_bottom = 88.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = " Carnage Cameleon"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 132.0
-margin_right = 1230.0
+margin_right = 1040.0
 margin_bottom = 344.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 613.0
+margin_right = 518.0
 margin_bottom = 212.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -64,43 +64,43 @@ alignment = 1
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_top = 12.0
-margin_right = 613.0
+margin_right = 518.0
 margin_bottom = 72.0
 scene_to_load = "res://TitleScreen/Screens/NewGameScreen.tscn"
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 7 )]
 margin_top = 76.0
-margin_right = 613.0
+margin_right = 518.0
 margin_bottom = 136.0
 scene_to_load = "res://TitleScreen/Screens/ContinueGameScreen.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 140.0
-margin_right = 613.0
+margin_right = 518.0
 margin_bottom = 200.0
 scene_to_load = "res://TitleScreen/Screens/SettingsScreen.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
-margin_left = 617.0
-margin_right = 1230.0
+margin_left = 522.0
+margin_right = 1040.0
 margin_bottom = 212.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 306.0
+margin_left = 259.0
 margin_top = 106.0
-margin_right = 306.0
+margin_right = 259.0
 margin_bottom = 106.0
 stretch_mode = 6
 
 [node name="VersionLabel" type="Label" parent="Menu"]
 margin_top = 348.0
-margin_right = 1230.0
+margin_right = 1040.0
 margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Version 0.1
 Ekeekalz-Studios"
 

@@ -44,10 +44,10 @@ texture = ExtResource( 2 )
 [node name="Label" type="Label" parent="Menu/HBoxContainer"]
 margin_left = 132.0
 margin_top = 40.0
-margin_right = 948.0
+margin_right = 996.0
 margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
-text = " Carnage Cameleon"
+text = " Carnage Chameleon"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 132.0

@@ -48,4 +48,3 @@ func _on_KillerInstinct_body_entered(body):
 				 body.evolve_anim = ""
 			else:
 				queue_free()
-			

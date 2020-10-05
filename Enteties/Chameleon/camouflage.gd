@@ -1,7 +1,7 @@
 extends AnimationPlayer
 
 # Tells other enteties if they can see us or not
-export(bool) var camouflaged
+var camouflaged = false
 
 onready var timer = $Timer
 

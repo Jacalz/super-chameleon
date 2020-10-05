@@ -11,6 +11,8 @@ onready var shape = $CollisionShape2D.shape
 onready var enemyL = $EnemyFinderL
 onready var enemyR = $EnemyFinderR
 
+var hidden = false
+
 # Defines the up direction in the world.
 const UP = Vector2(0, -1)
 
@@ -56,6 +58,7 @@ func _physics_process(delta: float):
 	velocity.y = min(velocity.y + GRAVITY * delta, TERMINAL_VELOCITY)
 	
 	var grndfriction = false
+	hidden = camo.camouflaged
 	
 	if global_position.y > 400:
 		get_tree().reload_current_scene()

@@ -18,6 +18,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle_evolved",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": false,
 "name": "Jump",
@@ -32,11 +37,6 @@ animations = [ {
 "loop": true,
 "name": "Walk",
 "speed": 6.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Idle_evolved",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
@@ -95,7 +95,7 @@ anims/Transparent = SubResource( 3 )
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="Camouflage"]
-wait_time = 3.0
+wait_time = 2.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Enteties/Teleporter/Sprites/tree-trunk-1-foreground.png" type="Texture" id=1]
 [ext_resource path="res://Enteties/Teleporter/teleporter.gd" type="Script" id=2]
+[ext_resource path="res://Enteties/Teleporter/Sprites/tree-trunk-1-background.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5, 35 )
@@ -15,7 +16,14 @@ extents = Vector2( 3, 100 )
 [node name="Teleporter" type="Area2D"]
 script = ExtResource( 2 )
 
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 0, 2 )
+z_index = -10
+texture = ExtResource( 3 )
+flip_h = true
+
 [node name="Foreground" type="Sprite" parent="."]
+z_index = 10
 texture = ExtResource( 1 )
 flip_h = true
 

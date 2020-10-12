@@ -332,17 +332,6 @@ offset = Vector2( 0, -520 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 1920, 640 )
 
-[node name="HighDunes" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.3, 0.3 )
-motion_mirroring = Vector2( 1920, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/HighDunes"]
-texture = ExtResource( 11 )
-centered = false
-offset = Vector2( 0, -100 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1920, 640 )
-
 [node name="Dunes" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.9, 0.9 )
 motion_mirroring = Vector2( 1920, 0 )

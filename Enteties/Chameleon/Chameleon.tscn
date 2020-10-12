@@ -23,6 +23,16 @@ animations = [ {
 "name": "Idle_evolved",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "Jump_evolved",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": false,
 "name": "Jump",
@@ -33,19 +43,9 @@ animations = [ {
 "name": "Walk_evolved",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "Idle",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": false,
-"name": "Jump_evolved",
 "speed": 1.0
 } ]
 

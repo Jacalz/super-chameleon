@@ -33,7 +33,7 @@ func _on_Evolve_timeout():
 	evolve_anim = ""
 
 func _on_evolving():
-	shape.height = 70
+	shape.height = 65
 	evolve_anim = "_evolved"
 
 func horizontal_move(direction: int):

@@ -18,9 +18,9 @@ _global_script_class_icons={
 config/name="Carnage Chameleon"
 config/description="A 2D platformer made in Godot for a school project."
 run/main_scene="res://TitleScreen/TitleScreen.tscn"
-config/icon="res://icon.png"
-config/macos_native_icon="res://icon.icns"
-config/windows_native_icon="res://icon.ico"
+config/icon="res://Icons/icon.png"
+config/macos_native_icon="res://Icons/icon.icns"
+config/windows_native_icon="res://Icons/icon.ico"
 
 [debug]
 

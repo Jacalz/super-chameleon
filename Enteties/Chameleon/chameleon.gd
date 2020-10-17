@@ -60,7 +60,7 @@ func _physics_process(delta: float):
 	var grndfriction = false
 	hidden = camo.camouflaged
 	
-	if global_position.y > 400:
+	if global_position.y > 600:
 		get_tree().reload_current_scene()
 	
 	if sprite.flip_h and enemyR.is_colliding():

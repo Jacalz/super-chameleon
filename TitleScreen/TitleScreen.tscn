@@ -33,7 +33,7 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
-margin_right = 1661.0
+margin_right = 1040.0
 margin_bottom = 128.0
 
 [node name="TextureRect" type="TextureRect" parent="Menu/HBoxContainer"]
@@ -51,53 +51,53 @@ text = " Carnage Chameleon"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 132.0
-margin_right = 1661.0
-margin_bottom = 740.0
+margin_right = 1040.0
+margin_bottom = 344.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 828.0
-margin_bottom = 608.0
+margin_right = 518.0
+margin_bottom = 212.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
-margin_top = 210.0
-margin_right = 828.0
-margin_bottom = 270.0
+margin_top = 12.0
+margin_right = 518.0
+margin_bottom = 72.0
 scene_to_load = "res://TitleScreen/Screens/NewGameScreen.tscn"
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 7 )]
-margin_top = 274.0
-margin_right = 828.0
-margin_bottom = 334.0
+margin_top = 76.0
+margin_right = 518.0
+margin_bottom = 136.0
 scene_to_load = "res://TitleScreen/Screens/ContinueGameScreen.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
-margin_top = 338.0
-margin_right = 828.0
-margin_bottom = 398.0
+margin_top = 140.0
+margin_right = 518.0
+margin_bottom = 200.0
 scene_to_load = "res://TitleScreen/Screens/SettingsScreen.tscn"
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
-margin_left = 832.0
-margin_right = 1661.0
-margin_bottom = 608.0
+margin_left = 522.0
+margin_right = 1040.0
+margin_bottom = 212.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 414.0
-margin_top = 304.0
-margin_right = 414.0
-margin_bottom = 304.0
+margin_left = 259.0
+margin_top = 106.0
+margin_right = 259.0
+margin_bottom = 106.0
 stretch_mode = 6
 
 [node name="VersionLabel" type="Label" parent="Menu"]
-margin_top = 744.0
-margin_right = 1661.0
-margin_bottom = 1353.0
+margin_top = 348.0
+margin_right = 1040.0
+margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )

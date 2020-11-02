@@ -17,7 +17,7 @@ var hidden = false
 const UP = Vector2(0, -1)
 
 # Constants for defining how the chameleon can move
-const GRAVITY = 1450
+const GRAVITY = 1350
 const TERMINAL_VELOCITY = 800
 const HORIZONTAL_SPEED = 7 * 64
 const JUMP_HEIGHT = -10 * 64
@@ -86,7 +86,7 @@ func _physics_process(delta: float):
 		sprite.play("Jump" + evolve_anim)
 
 		if !grndfriction:
-			velocity.x = lerp(velocity.x, 0, 0.15)
+			velocity.x = lerp(velocity.x, 0, 0.115)
 	
 	velocity = move_and_slide(velocity, UP)
 	

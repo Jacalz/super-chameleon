@@ -1,10 +1,4 @@
-extends KinematicBody2D
-
-const UP = Vector2(0, -1)
-const SPEED = 100
-const GRAVITY = 1450
-
-var velocity = Vector2()
+extends "res://Enteties/Enemies/enemy.gd"
 
 onready var LeftD = $FloorDetector/Left
 onready var RightD = $FloorDetector/Right
@@ -12,15 +6,7 @@ onready var ASprite = $AnimatedSprite
 onready var PlayerR = $KillerInstinct/PlayerRight
 onready var PlayerL = $KillerInstinct/PlayerLeft
 
-onready var player = get_tree().get_root().find_node("Chameleon", true, false)
-
-var player_behind = false
-
-func _ready() -> void:
-	set_physics_process(false)
-	velocity.x = -SPEED
-
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float):
 	velocity.y += GRAVITY * delta
 	
 	var need_turn = is_on_wall() or !LeftD.is_colliding() or !RightD.is_colliding()
@@ -32,7 +18,6 @@ func _physics_process(delta: float) -> void:
 	
 	ASprite.flip_h = velocity.x == SPEED
 	velocity.y = move_and_slide(velocity, UP).y
-
 
 func _on_KillerInstinct_body_entered(body):
 	if body.name == "Chameleon":

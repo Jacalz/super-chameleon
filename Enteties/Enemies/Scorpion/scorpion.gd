@@ -25,7 +25,7 @@ func _on_KillerInstinct_body_entered(body):
 				ASprite.position.y += 15
 				ASprite.play("attack")
 				yield(get_tree().create_timer(0.5), "timeout")
-				get_tree().reload_current_scene()
+				assert(get_tree().reload_current_scene() == OK)
 		else:
 			if !body.sees_enemy and !body.hidden:
 				 body.evolve_anim = ""

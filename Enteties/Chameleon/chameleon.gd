@@ -57,7 +57,7 @@ func _physics_process(delta: float):
 	hidden = camo.camouflaged
 	
 	if global_position.y > 600:
-		get_tree().reload_current_scene()
+		assert(get_tree().reload_current_scene() == OK)
 	
 	sees_enemy = (sprite.flip_h and enemyR.is_colliding()) or (!sprite.flip_h and enemyL.is_colliding())
 		

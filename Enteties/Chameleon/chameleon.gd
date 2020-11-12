@@ -37,11 +37,7 @@ func _on_evolving():
 	evolve_anim = "_evolved"
 
 func horizontal_move(direction: int):
-	if direction == 1:
-		sprite.flip_h = true
-	else:
-		sprite.flip_h = false
-	
+	sprite.flip_h =  direction == 1
 	sprite.play("Walk" + evolve_anim)
 	
 	camo.disable()
@@ -63,12 +59,7 @@ func _physics_process(delta: float):
 	if global_position.y > 600:
 		get_tree().reload_current_scene()
 	
-	if sprite.flip_h and enemyR.is_colliding():
-		sees_enemy = true
-	elif !sprite.flip_h and enemyL.is_colliding():
-		sees_enemy = true
-	else:
-		sees_enemy = false
+	sees_enemy = (sprite.flip_h and enemyR.is_colliding()) or (!sprite.flip_h and enemyL.is_colliding())
 		
 	var direction = get_horizontal_input()
 	if direction != 0:

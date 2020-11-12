@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/Chameleon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Desert/Tiles/sandblock-corner-right.png" type="Texture" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Enteties/Enemies/Scorpion/Scorpion.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Enteties/Teleporter/Teleporter.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Enteties/Enemies/AloeVera/AloeVera.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Levels/Desert/Background/desert-ground.png" type="Texture" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -379,16 +378,6 @@ region_rect = Rect2( 0, 0, 1920, 640 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
-motion_mirroring = Vector2( 1920, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 20 )
-offset = Vector2( 960, 380 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 1920, 320 )
 
 [node name="Berries" type="Node2D" parent="."]
 

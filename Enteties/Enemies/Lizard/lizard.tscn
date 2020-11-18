@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://lizard.gd" type="Script" id=1]
+[ext_resource path="res://Enteties/Enemies/Lizard/Sprites/lizard-walk-2.png" type="Texture" id=2]
+[ext_resource path="res://Enteties/Enemies/Lizard/Sprites/lizard-block-1.png" type="Texture" id=3]
+[ext_resource path="res://Enteties/Enemies/Lizard/Sprites/lizard-walk-1.png" type="Texture" id=4]
+[ext_resource path="res://Enteties/Enemies/Lizard/Sprites/lizard-walk-3.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "move",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "block",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 22.0
+height = 40.0
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 21.0
+height = 51.0
+
+[node name="Lizard" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 1 )
+SPEED = 150
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "move"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+process_parent = true
+physics_process_parent = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="Hitbox" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

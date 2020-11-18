@@ -8,15 +8,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "move",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": false,
 "name": "attack",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "move",
+"speed": 12.0
 } ]
 
 [node name="Scorpion" type="KinematicBody2D"]

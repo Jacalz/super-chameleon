@@ -6,4 +6,4 @@
 scene_to_load = "res://TitleScreen/ContinueGameScreen.tscn"
 
 [node name="Label" parent="." index="0"]
-text = "Continue game"
+text = "Load game"

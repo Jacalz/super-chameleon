@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Icons/icon.png" type="Texture" id=2]
+[ext_resource path="res://TitleScreen/Buttons/ExitButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://TitleScreen/Buttons/NewGameButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://TitleScreen/Buttons/SettingsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TitleScreen/Animations/FadeIn.tscn" type="PackedScene" id=6]
@@ -52,50 +53,54 @@ text = " Carnage Chameleon"
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 132.0
 margin_right = 1040.0
-margin_bottom = 344.0
+margin_bottom = 384.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 518.0
-margin_bottom = 212.0
+margin_bottom = 252.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
 [node name="NewGame" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
-margin_top = 12.0
 margin_right = 518.0
-margin_bottom = 72.0
+margin_bottom = 60.0
 scene_to_load = "res://TitleScreen/Screens/NewGameScreen.tscn"
 
 [node name="Continue" parent="Menu/CenterRow/Buttons" instance=ExtResource( 7 )]
-margin_top = 76.0
+margin_top = 64.0
 margin_right = 518.0
-margin_bottom = 136.0
+margin_bottom = 124.0
 scene_to_load = "res://TitleScreen/Screens/ContinueGameScreen.tscn"
 
 [node name="SettingsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
-margin_top = 140.0
+margin_top = 128.0
 margin_right = 518.0
-margin_bottom = 200.0
+margin_bottom = 188.0
 scene_to_load = "res://TitleScreen/Screens/SettingsScreen.tscn"
+
+[node name="MenuButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
+margin_top = 192.0
+margin_right = 518.0
+margin_bottom = 252.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
 margin_left = 522.0
 margin_right = 1040.0
-margin_bottom = 212.0
+margin_bottom = 252.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
 margin_left = 259.0
-margin_top = 106.0
+margin_top = 126.0
 margin_right = 259.0
-margin_bottom = 106.0
+margin_bottom = 126.0
 stretch_mode = 6
 
 [node name="VersionLabel" type="Label" parent="Menu"]
-margin_top = 348.0
+margin_top = 388.0
 margin_right = 1040.0
 margin_bottom = 560.0
 size_flags_horizontal = 3

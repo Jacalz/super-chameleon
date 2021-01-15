@@ -18,14 +18,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Idle_evolved",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": false,
-"name": "Jump",
+"name": "Jump_evolved",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
@@ -33,20 +28,25 @@ animations = [ {
 "name": "Walk",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": false,
-"name": "Idle",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Walk_evolved",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": false,
-"name": "Jump_evolved",
+"name": "Jump",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "Idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle_evolved",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -130,7 +130,6 @@ script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-debug = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/DebugDisplay"]
 margin_right = 1280.0

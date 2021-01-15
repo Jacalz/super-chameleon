@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Carnage Chameleon"
-config/description="A 2D platformer made in Godot for a school project."
+config/name="Super Chameleon"
+config/description="A 2D pixel art platformer inspired by Super Mario and made for a school project. In Super Chameleon, you play as a chameleon with abilities such as camouflaging and turning into a Jackson's Chameleon with horns. The game has been created using only open source software."
 run/main_scene="res://TitleScreen/TitleScreen.tscn"
 config/use_custom_user_dir=true
 config/icon="res://Icons/icon.png"

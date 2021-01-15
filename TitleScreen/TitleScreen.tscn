@@ -45,10 +45,10 @@ texture = ExtResource( 2 )
 [node name="Label" type="Label" parent="Menu/HBoxContainer"]
 margin_left = 132.0
 margin_top = 40.0
-margin_right = 996.0
+margin_right = 900.0
 margin_bottom = 88.0
 custom_fonts/font = SubResource( 1 )
-text = " Carnage Chameleon"
+text = " Super Chameleon"
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 132.0
@@ -106,7 +106,7 @@ margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-text = "Version 0.1
+text = "Version 1.0
 Ekeekalz-Studios"
 
 [node name="FadeIn" parent="." instance=ExtResource( 6 )]

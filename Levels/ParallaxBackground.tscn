@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Levels/Desert/Background/mellanbakgrund.png" type="Texture" id=1]
+[ext_resource path="res://Levels/Desert/Background/desert-clouds.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Desert/Background/desert-pyramids.png" type="Texture" id=3]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.15, 0.15 )
+motion_mirroring = Vector2( 1920, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Clouds"]
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, -400 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 640 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Pyramids" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 1920, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Pyramids"]
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 0, -520 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 640 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="HighDunes" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.3, 0.3 )
+motion_mirroring = Vector2( 1920, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="HighDunes"]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -100 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 640 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Dunes" type="ParallaxLayer" parent="."]
+motion_scale = Vector2( 0.9, 0.9 )
+motion_mirroring = Vector2( 1920, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Dunes"]
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -100 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1920, 640 )
+__meta__ = {
+"_edit_lock_": true
+}

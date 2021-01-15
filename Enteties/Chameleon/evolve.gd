@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 onready var berries = get_tree().get_root().find_node("Berries", true, false)
 onready var timer = $Timer

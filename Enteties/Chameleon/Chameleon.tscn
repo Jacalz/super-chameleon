@@ -18,6 +18,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walk_evolved",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "Jump_evolved",
@@ -26,11 +31,6 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Walk",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Walk_evolved",
 "speed": 6.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -110,7 +110,7 @@ script = ExtResource( 12 )
 
 [node name="ShiftTween" type="Tween" parent="Camera2D"]
 
-[node name="Evolve" type="Node2D" parent="."]
+[node name="Evolve" type="Node" parent="."]
 script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="Evolve"]

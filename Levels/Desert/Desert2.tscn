@@ -17,7 +17,7 @@ format = 1
 
 [node name="Teleporter" parent="." instance=ExtResource( 18 )]
 position = Vector2( 97.6542, -87.552 )
-scene_to_load = "res://TitleScreen/TitleScreen.tscn"
+scene_to_load = "res://Levels/Desert/Desert3.tscn"
 
 [node name="Berries" type="Node" parent="."]
 

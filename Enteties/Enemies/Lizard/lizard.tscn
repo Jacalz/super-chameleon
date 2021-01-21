@@ -25,7 +25,7 @@ height = 40.0
 
 [sub_resource type="CapsuleShape2D" id=3]
 radius = 21.0
-height = 51.0
+height = 54.0
 
 [node name="Lizard" type="KinematicBody2D"]
 collision_layer = 2

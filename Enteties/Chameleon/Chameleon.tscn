@@ -18,21 +18,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Walk_evolved",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": false,
-"name": "Jump_evolved",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": false,
 "name": "Jump",
@@ -43,10 +28,25 @@ animations = [ {
 "name": "Idle",
 "speed": 1.0
 }, {
+"frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "Walk_evolved",
+"speed": 6.0
+}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Idle_evolved",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": false,
+"name": "Jump_evolved",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 6.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -85,6 +85,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
@@ -184,22 +185,6 @@ margin_right = 12.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 6 )
 text = "  Exit to titlescreen  "
-
-[node name="EnemyFinderL" type="RayCast2D" parent="."]
-position = Vector2( -50, 0 )
-rotation = 1.5708
-enabled = true
-cast_to = Vector2( 0, 80 )
-collision_mask = 2
-collide_with_areas = true
-
-[node name="EnemyFinderR" type="RayCast2D" parent="."]
-position = Vector2( 50, 0 )
-rotation = -1.5708
-enabled = true
-cast_to = Vector2( 0, 80 )
-collision_mask = 2
-collide_with_areas = true
 [connection signal="on_grounded_updated" from="." to="Camera2D" method="_on_Chameleon_on_grounded_updated"]
 [connection signal="timeout" from="Camouflage/Timer" to="Camouflage" method="_on_Timer_timeout"]
 [connection signal="on_evolving" from="Evolve" to="." method="_on_evolving"]

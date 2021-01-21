@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://lizard.gd" type="Script" id=1]
+[ext_resource path="res://Enteties/Enemies/Lizard/lizard.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Enemies/Lizard/Sprites/lizard-walk-2.png" type="Texture" id=2]
 [ext_resource path="res://Enteties/Enemies/Lizard/Sprites/lizard-block-1.png" type="Texture" id=3]
 [ext_resource path="res://Enteties/Enemies/Lizard/Sprites/lizard-walk-1.png" type="Texture" id=4]
@@ -36,6 +36,7 @@ SPEED = 150
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "move"
+flip_h = true
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 rotation = 1.5708

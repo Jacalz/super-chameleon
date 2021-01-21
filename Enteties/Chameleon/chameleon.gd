@@ -8,8 +8,6 @@ onready var sprite = $AnimatedSprite
 onready var camo = $Camouflage
 onready var evolve = $Evolve
 onready var shape = $CollisionShape2D.shape
-onready var enemyL = $EnemyFinderL
-onready var enemyR = $EnemyFinderR
 
 var hidden = false
 
@@ -26,7 +24,7 @@ const JUMP_HEIGHT = -10 * 64
 var velocity = Vector2()
 
 var evolve_anim = ""
-var sees_enemy = false
+var flip_h = true
 
 func _on_Evolve_timeout():
 	shape.height = 45
@@ -55,11 +53,11 @@ func _physics_process(delta: float):
 	
 	var grndfriction = false
 	hidden = camo.camouflaged
+	flip_h = sprite.flip_h
 	
+	# Restart level if the player falls off the platforms
 	if global_position.y > 600:
 		assert(get_tree().reload_current_scene() == OK)
-	
-	sees_enemy = (sprite.flip_h and enemyR.is_colliding()) or (!sprite.flip_h and enemyL.is_colliding())
 		
 	var direction = get_horizontal_input()
 	if direction != 0:

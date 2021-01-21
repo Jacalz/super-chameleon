@@ -27,7 +27,11 @@ func _on_KillerInstinct_body_entered(body):
 				yield(get_tree().create_timer(0.5), "timeout")
 				assert(get_tree().reload_current_scene() == OK)
 		else:
-			if !body.sees_enemy and !body.hidden:
+			if body.hidden:
+				return
+			
+			# Player is looking away if flip_h values are equal
+			if body.flip_h == ASprite.flip_h:
 				 body.evolve_anim = ""
-			elif !body.hidden:
+			else:
 				queue_free()

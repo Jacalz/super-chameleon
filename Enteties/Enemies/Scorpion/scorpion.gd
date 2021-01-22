@@ -1,5 +1,7 @@
 extends "res://Enteties/Enemies/enemy.gd"
 
+export var enable_floor_detect = true
+
 onready var LeftD = $FloorDetector/Left
 onready var RightD = $FloorDetector/Right
 onready var ASprite = $AnimatedSprite
@@ -12,6 +14,9 @@ func _physics_process(delta: float):
 	var need_turn = is_on_wall() or !LeftD.is_colliding() or !RightD.is_colliding()
 	var sees_left = velocity.x == SPEED and !player.hidden and PlayerL.is_colliding()
 	var sees_right =  velocity.x == -SPEED and !player.hidden and PlayerR.is_colliding()
+	
+	if !enable_floor_detect:
+		need_turn = is_on_wall()
 	
 	if sees_left or sees_right or need_turn:
 		velocity.x *= -1

@@ -8,15 +8,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
-"loop": false,
-"name": "attack",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "move",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
 } ]
 
 [node name="Scorpion" type="KinematicBody2D"]
@@ -29,7 +29,7 @@ frames = SubResource( 1 )
 animation = "move"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -49.1365, 42.9452, 42.4033, 44.2815, 42.4033, -30.554, 17.2354, -53.9401, -48.6911, 8.42284 )
+polygon = PoolVector2Array( -49.1365, 42.9452, 50.0283, 44.243, 32.9107, -27.314, 8.7778, -49.4826, -1.60498, -39.9417, -2.72743, 1.87002, -40.0493, 2.43125, -48.6911, 8.42284 )
 
 [node name="DisableOutsideView" type="VisibilityEnabler2D" parent="."]
 rect = Rect2( -30, 0, 60, 20 )
@@ -56,7 +56,7 @@ collision_mask = 2147483656
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillerInstinct"]
 modulate = Color( 0, 0, 0, 1 )
-polygon = PoolVector2Array( -53.9551, 43.3783, 51.8055, 44.172, 51.4087, -32.6185, 16.5673, -57.9491, -53.5582, 6.47126 )
+polygon = PoolVector2Array( -55.7638, 43.9623, 54.2375, 43.9623, 37.6812, -34.3294, 7.0941, -55.0949, -11.9877, -47.7989, -55.2025, 4.39556 )
 
 [node name="PlayerRight" type="RayCast2D" parent="KillerInstinct"]
 modulate = Color( 0.486275, 0.0941176, 0.0941176, 1 )

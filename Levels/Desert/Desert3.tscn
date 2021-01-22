@@ -8,15 +8,20 @@
 [node name="Desert2" type="Node2D"]
 
 [node name="Chameleon" parent="." instance=ExtResource( 1 )]
+position = Vector2( 62.2957, 33.9795 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 format = 1
+tile_data = PoolIntArray( 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="Teleporter" parent="." instance=ExtResource( 18 )]
-position = Vector2( 97.6542, -87.552 )
+position = Vector2( 255.281, 27.6006 )
 scene_to_load = "res://TitleScreen/TitleScreen.tscn"
 
 [node name="Berries" type="Node" parent="."]

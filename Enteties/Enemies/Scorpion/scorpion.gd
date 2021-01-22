@@ -23,13 +23,17 @@ func _on_KillerInstinct_body_entered(body):
 	if body.name == "Chameleon":
 		if body.hidden:
 			return
-			
+		
 		if body.evolve_anim == "":
 				ASprite.position.y += 15
 				ASprite.play("attack")
 				yield(get_tree().create_timer(0.5), "timeout")
 				assert(get_tree().reload_current_scene() == OK)
 		elif body.flip_h == ASprite.flip_h: # Player is looking away if flip_h values are equal
+			ASprite.position.y += 15
+			ASprite.play("attack")
 			body.evolve_anim = ""
+			ASprite.position.y -= 15
+			ASprite.play("move")
 		else:
 			queue_free()

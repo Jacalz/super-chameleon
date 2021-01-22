@@ -14,9 +14,13 @@ func load_settings():
 			file.close()
 
 func _ready():
+	$CenterContainer/VBoxContainer/Load.grab_focus()
 	load_settings()
 	if path == "" or path == "res://TitleScreen/TitleScreen.tscn":
 		$CenterContainer/VBoxContainer/Button.disabled = true
 
-func _on_Button_pressed():
+func _on_Back_pressed():
+	assert(get_tree().change_scene("res://TitleScreen/TitleScreen.tscn") == OK)
+
+func _on_Load_pressed():
 	assert(get_tree().change_scene(path) == OK)

@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TitleScreen/Screens/Screen.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/PressStart2P-vaV7.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Levels/Desert/Tiles/sandblock-top.png" type="Texture" id=3]
-[ext_resource path="res://TitleScreen/Screens/ContinueGameFocus.gd" type="Script" id=4]
 [ext_resource path="res://TitleScreen/Screens/ContinueGameScreen.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -22,14 +21,13 @@ margin_bottom = 426.0
 margin_right = 416.0
 text = "Continue Game"
 
-[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" index="1"]
+[node name="Load" type="Button" parent="CenterContainer/VBoxContainer" index="1"]
 margin_top = 36.0
 margin_right = 416.0
 margin_bottom = 106.0
 custom_fonts/font = SubResource( 1 )
 text = "Load saved"
 icon = ExtResource( 3 )
-script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -38,4 +36,5 @@ __meta__ = {
 margin_top = 110.0
 margin_right = 416.0
 margin_bottom = 132.0
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Back" to="." method="_on_Back_pressed"]

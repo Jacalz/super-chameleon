@@ -75,7 +75,7 @@ func _physics_process(delta: float):
 		sprite.play("Jump" + evolve_anim)
 
 		if !grndfriction:
-			velocity.x = lerp(velocity.x, 0, 0.115)
+			velocity.x = lerp(velocity.x, 0, 0.095)
 	
 	velocity = move_and_slide(velocity, UP)
 	

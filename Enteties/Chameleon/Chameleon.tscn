@@ -115,7 +115,7 @@ script = ExtResource( 12 )
 script = ExtResource( 7 )
 
 [node name="Timer" type="Timer" parent="Evolve"]
-wait_time = 30.0
+wait_time = 15.0
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

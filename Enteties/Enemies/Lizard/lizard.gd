@@ -9,7 +9,7 @@ func _physics_process(delta: float):
 		velocity.x *= -1
 	
 	# Remove the lizard if it falls out of the world
-	if global_position.y > 600:
+	if global_position.y > 700:
 		queue_free()
 	
 	ASprite.flip_h = velocity.x == -SPEED

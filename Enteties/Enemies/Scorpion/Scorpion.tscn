@@ -32,6 +32,8 @@ animation = "move"
 polygon = PoolVector2Array( -49.1365, 42.9452, 50.0283, 44.243, 32.9107, -27.314, 8.7778, -49.4826, -1.60498, -39.9417, -2.72743, 1.87002, -40.0493, 2.43125, -48.6911, 8.42284 )
 
 [node name="DisableOutsideView" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -4.52995e-06, -50.2301 )
+scale = Vector2( 1.75766, 5.04086 )
 rect = Rect2( -30, 0, 60, 20 )
 process_parent = true
 physics_process_parent = true

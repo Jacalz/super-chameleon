@@ -12,6 +12,8 @@ position = Vector2( 62.2957, 33.9795 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
+collision_layer = 8
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0 )
 __meta__ = {

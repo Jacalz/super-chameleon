@@ -8,8 +8,14 @@ onready var ASprite = $AnimatedSprite
 onready var PlayerR = $KillerInstinct/PlayerRight
 onready var PlayerL = $KillerInstinct/PlayerLeft
 
+func _ready():
+	if !enable_floor_detect:
+		LeftD.enabled = false
+		RightD.enabled = false
+
 func _physics_process(delta: float):
 	velocity.y += GRAVITY * delta
+	
 	
 	var need_turn = is_on_wall() or !LeftD.is_colliding() or !RightD.is_colliding()
 	var sees_left = velocity.x == SPEED and !player.hidden and PlayerL.is_colliding()
@@ -18,7 +24,7 @@ func _physics_process(delta: float):
 	if !enable_floor_detect:
 		need_turn = is_on_wall()
 	
-	if sees_left or sees_right or need_turn:
+	if need_turn or sees_left or sees_right:
 		velocity.x *= -1
 	
 	ASprite.flip_h = velocity.x == SPEED

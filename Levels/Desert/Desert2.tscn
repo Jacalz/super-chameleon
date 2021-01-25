@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/Chameleon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/ParallaxBackground.tscn" type="PackedScene" id=2]
@@ -7,12 +7,13 @@
 [ext_resource path="res://Enteties/Enemies/Lizard/lizard.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enteties/Enemies/Scorpion/Scorpion.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Enteties/EvolveBerry/EvolveBerry.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Enteties/Teleporter/HollowLog.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Enteties/Teleporter/Teleporter.tscn" type="PackedScene" id=18]
 
 [node name="Desert2" type="Node2D"]
 
 [node name="Chameleon" parent="." instance=ExtResource( 1 )]
-position = Vector2( -77.9669, 145.376 )
+position = Vector2( 3.67821, 160.006 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -64,3 +65,7 @@ position = Vector2( 3395.67, 84.5677 )
 
 [node name="Lizard3" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 3342.79, -222.954 )
+
+[node name="HollowLog" parent="." instance=ExtResource( 8 )]
+position = Vector2( -128.367, 158.571 )
+flipped = false

@@ -1,21 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/Chameleon.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/ParallaxBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Levels/Desert/Tiles/Desert.tres" type="TileSet" id=3]
+[ext_resource path="res://Enteties/Teleporter/HollowLog.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Enteties/Teleporter/Teleporter.tscn" type="PackedScene" id=18]
 
 [node name="Desert2" type="Node2D"]
 
 [node name="Chameleon" parent="." instance=ExtResource( 1 )]
-position = Vector2( 62.2957, 33.9795 )
+position = Vector2( 202.933, 31.1479 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
 collision_layer = 8
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0 )
+tile_data = PoolIntArray( 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -23,9 +24,13 @@ __meta__ = {
 [node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
 
 [node name="Teleporter" parent="." instance=ExtResource( 18 )]
-position = Vector2( 255.281, 27.6006 )
+position = Vector2( 639.439, 31.3761 )
 scene_to_load = "res://TitleScreen/TitleScreen.tscn"
 
 [node name="Berries" type="Node" parent="."]
 
 [node name="Enemies" type="Node" parent="."]
+
+[node name="HollowLog" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64.1836, 28.3163 )
+flipped = false

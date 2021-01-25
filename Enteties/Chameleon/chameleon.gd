@@ -56,7 +56,7 @@ func _physics_process(delta: float):
 	flip_h = sprite.flip_h
 	
 	# Restart level if the player falls off the platforms
-	if global_position.y > 600:
+	if global_position.y > 650:
 		assert(get_tree().reload_current_scene() == OK)
 		
 	var direction = get_horizontal_input()

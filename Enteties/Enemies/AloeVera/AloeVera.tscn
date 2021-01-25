@@ -4,7 +4,7 @@
 [ext_resource path="res://Enteties/Enemies/AloeVera/aloevera.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 26.0
+radius = 25.0
 
 [node name="AloeVera" type="StaticBody2D"]
 collision_layer = 2
@@ -14,11 +14,12 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 
 [node name="Hitbox" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( 0.522999, -24.1913, 21.315, -5.38586, 24.4933, 4.81147, 6.48248, 24.6764, -5.56891, 24.544, -25.0365, 6.93039, -20.6663, -1.81018 )
+polygon = PoolVector2Array( 0.655499, -20.8804, 20.388, -4.06145, 22.9042, 6.40075, 6.48248, 24.6764, -5.56891, 24.544, -23.7122, 8.65211, -19.3419, -0.353333 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Hitbox2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]

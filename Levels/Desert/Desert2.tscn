@@ -13,7 +13,7 @@
 [node name="Desert2" type="Node2D"]
 
 [node name="Chameleon" parent="." instance=ExtResource( 1 )]
-position = Vector2( 29.7156, 155.638 )
+position = Vector2( -30.3521, 158.308 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )

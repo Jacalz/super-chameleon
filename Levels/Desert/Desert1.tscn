@@ -89,5 +89,5 @@ position = Vector2( 4279.8, 611.853 )
 position = Vector2( 6177.76, 99.8657 )
 
 [node name="Teleporter" parent="." instance=ExtResource( 18 )]
-position = Vector2( 6398.88, 87.7411 )
+position = Vector2( 6399.44, 90.5472 )
 scene_to_load = "res://Levels/Desert/Desert2.tscn"

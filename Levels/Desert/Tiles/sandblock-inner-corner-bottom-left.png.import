@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tiles-support-long.png-f78992dd7e352a4de820805c178db398.stex"
+path="res://.import/sandblock-inner-corner-bottom-left.png-25b04fc297ec36b5928ba0b4659b15c1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/Desert/Tiles/tiles-support-long.png"
-dest_files=[ "res://.import/tiles-support-long.png-f78992dd7e352a4de820805c178db398.stex" ]
+source_file="res://Levels/Desert/Tiles/sandblock-inner-corner-bottom-left.png"
+dest_files=[ "res://.import/sandblock-inner-corner-bottom-left.png-25b04fc297ec36b5928ba0b4659b15c1.stex" ]
 
 [params]
 

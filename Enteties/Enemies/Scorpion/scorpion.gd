@@ -16,7 +16,6 @@ func _ready():
 func _physics_process(delta: float):
 	velocity.y += GRAVITY * delta
 	
-	
 	var need_turn = is_on_wall() or !LeftD.is_colliding() or !RightD.is_colliding()
 	var sees_left = velocity.x == SPEED and !player.hidden and PlayerL.is_colliding()
 	var sees_right =  velocity.x == -SPEED and !player.hidden and PlayerR.is_colliding()

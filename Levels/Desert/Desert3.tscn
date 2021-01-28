@@ -145,7 +145,7 @@ position = Vector2( -454.753, 530.641 )
 enable_floor_detect = false
 
 [node name="Scorpion2" parent="Enemies" instance=ExtResource( 6 )]
-position = Vector2( 2204.66, 85.3786 )
+position = Vector2( 2370.12, 14.6679 )
 enable_floor_detect = false
 
 [node name="Scorpion3" parent="Enemies" instance=ExtResource( 6 )]

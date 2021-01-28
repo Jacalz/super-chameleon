@@ -35,16 +35,17 @@ func _on_evolving():
 	evolve_anim = "_evolved"
 
 func horizontal_move(direction: int):
-	sprite.flip_h =  direction > 0
+	if direction != 0:
+		sprite.flip_h =  direction > 0
 	sprite.play("Walk" + evolve_anim)
 	
 	camo.disable()
 
 func get_horizontal_input() -> float:
-	return -Input.get_action_strength("ui_left") + Input.get_action_strength("ui_right")
+	return -Input.get_action_strength("move_left") + Input.get_action_strength("move_right")
 
 func _input(event):
-	if is_on_floor() && event.is_action_pressed("ui_up"):
+	if is_on_floor() && event.is_action_pressed("move_jump"):
 		velocity.y = JUMP_HEIGHT
 		camo.disable()
 

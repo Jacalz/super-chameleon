@@ -35,7 +35,7 @@ func _on_evolving():
 	evolve_anim = "_evolved"
 
 func horizontal_move(direction: int):
-	sprite.flip_h =  direction == 1
+	sprite.flip_h =  direction > 0
 	sprite.play("Walk" + evolve_anim)
 	
 	camo.disable()

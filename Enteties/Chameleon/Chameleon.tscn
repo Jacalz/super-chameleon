@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Enteties/Chameleon/camouflage.gd" type="Script" id=1]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-2.png" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-walk-1.png" type="Texture" id=4]
 [ext_resource path="res://Enteties/Chameleon/chameleon.gd" type="Script" id=5]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-2.png" type="Texture" id=6]
-[ext_resource path="res://Enteties/Chameleon/evolve.gd" type="Script" id=7]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-1.png" type="Texture" id=8]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Evolved/chameleon-evolved-walk-3.png" type="Texture" id=9]
 [ext_resource path="res://Enteties/Chameleon/Sprites/Regular/chameleon-jump-1.png" type="Texture" id=10]
@@ -23,30 +22,30 @@ animations = [ {
 "name": "Walk_evolved",
 "speed": 6.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": false,
-"name": "Idle",
+"name": "Jump",
 "speed": 1.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": false,
 "name": "Jump_evolved",
 "speed": 1.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": false,
-"name": "Jump",
+"name": "Idle",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Idle_evolved",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 6.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -111,10 +110,7 @@ script = ExtResource( 12 )
 
 [node name="ShiftTween" type="Tween" parent="Camera2D"]
 
-[node name="Evolve" type="Node" parent="."]
-script = ExtResource( 7 )
-
-[node name="Timer" type="Timer" parent="Evolve"]
+[node name="EvolveTimer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
 
@@ -187,8 +183,7 @@ custom_fonts/font = SubResource( 6 )
 text = "  Exit to titlescreen  "
 [connection signal="on_grounded_updated" from="." to="Camera2D" method="_on_Chameleon_on_grounded_updated"]
 [connection signal="timeout" from="Camouflage/Timer" to="Camouflage" method="_on_Timer_timeout"]
-[connection signal="on_evolving" from="Evolve" to="." method="_on_evolving"]
-[connection signal="timeout" from="Evolve/Timer" to="." method="_on_Evolve_timeout"]
+[connection signal="timeout" from="EvolveTimer" to="." method="_on_Evolve_timeout"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer/Resume" to="CanvasLayer/CenterContainer/MenuPopup" method="_on_Resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer/Restart" to="CanvasLayer/CenterContainer/MenuPopup" method="_on_Restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/MenuPopup/VBoxContainer/Exit" to="CanvasLayer/CenterContainer/MenuPopup" method="_on_Exit_pressed"]

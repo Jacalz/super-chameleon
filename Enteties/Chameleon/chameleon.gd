@@ -6,8 +6,8 @@ signal on_grounded_updated(is_grounded)
 # Onready variables for our nodes
 onready var sprite = $AnimatedSprite
 onready var camo = $Camouflage
-onready var evolve = $Evolve
 onready var shape = $CollisionShape2D.shape
+onready var evolve_timer = $EvolveTimer
 
 var hidden = false
 
@@ -33,6 +33,7 @@ func _on_Evolve_timeout():
 func _on_evolving():
 	shape.height = 65
 	evolve_anim = "_evolved"
+	evolve_timer.start()
 
 func horizontal_move(direction: int):
 	if direction != 0:

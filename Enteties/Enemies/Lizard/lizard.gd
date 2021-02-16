@@ -12,7 +12,7 @@ func _physics_process(delta: float):
 	if global_position.y > 700:
 		queue_free()
 	
-	ASprite.flip_h = velocity.x == -SPEED
+	ASprite.flip_h = velocity.x < 0
 	velocity.y = move_and_slide(velocity, UP).y
 
 func _on_Area2D_body_entered(body):

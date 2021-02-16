@@ -8,6 +8,8 @@ onready var ASprite = $AnimatedSprite
 onready var PlayerR = $KillerInstinct/PlayerRight
 onready var PlayerL = $KillerInstinct/PlayerLeft
 
+onready var player = get_tree().get_root().find_node("Chameleon", true, false)
+
 func _ready():
 	if !enable_floor_detect:
 		LeftD.enabled = false
@@ -26,7 +28,7 @@ func _physics_process(delta: float):
 	if need_turn or sees_left or sees_right:
 		velocity.x *= -1
 	
-	ASprite.flip_h = velocity.x == SPEED
+	ASprite.flip_h = velocity.x > 0
 	velocity.y = move_and_slide(velocity, UP).y
 
 func _on_KillerInstinct_body_entered(body):

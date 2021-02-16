@@ -61,6 +61,7 @@ position = Vector2( 1441.65, -474.137 )
 
 [node name="Lizard6" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1914.24, -546.017 )
+SPEED = -150
 
 [node name="Scorpion" parent="Enemies" instance=ExtResource( 6 )]
 position = Vector2( 1931.02, 342.362 )
@@ -79,7 +80,8 @@ position = Vector2( 2678.15, 298.019 )
 position = Vector2( 3342.79, -222.954 )
 
 [node name="Lizard4" parent="Enemies" instance=ExtResource( 5 )]
-position = Vector2( -139.472, -669.73 )
+position = Vector2( -75.8324, -608.919 )
+SPEED = -150
 
 [node name="Lizard5" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( -311.007, -417.501 )

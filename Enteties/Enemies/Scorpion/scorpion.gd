@@ -2,31 +2,28 @@ extends "res://Enteties/Enemies/enemy.gd"
 
 export var enable_floor_detect = true
 
-onready var LeftD = $FloorDetector/Left
-onready var RightD = $FloorDetector/Right
+onready var Floor = $FloorDetector
+onready var Player = $KillerInstinct/Player
 onready var ASprite = $AnimatedSprite
-onready var PlayerR = $KillerInstinct/PlayerRight
-onready var PlayerL = $KillerInstinct/PlayerLeft
 
 onready var player = get_tree().get_root().find_node("Chameleon", true, false)
 
 func _ready():
-	if !enable_floor_detect:
-		LeftD.enabled = false
-		RightD.enabled = false
+	Floor.enabled = enable_floor_detect
 
 func _physics_process(delta: float):
 	velocity.y += GRAVITY * delta
 	
-	var need_turn = is_on_wall() or !LeftD.is_colliding() or !RightD.is_colliding()
-	var sees_left = velocity.x == SPEED and !player.hidden and PlayerL.is_colliding()
-	var sees_right =  velocity.x == -SPEED and !player.hidden and PlayerR.is_colliding()
+	var need_turn = is_on_wall() or (Floor.enabled and !Floor.is_colliding()) # Collision returns false if disabled for some reason
+	var sees_player = !player.hidden and Player.is_colliding()
 	
-	if !enable_floor_detect:
-		need_turn = is_on_wall()
-	
-	if need_turn or sees_left or sees_right:
+	if !(need_turn == sees_player):
 		velocity.x *= -1
+		
+		# Need to flip the detection on changing direction
+		Floor.position.x = -Floor.position.x
+		Player.rotation_degrees = -Player.rotation_degrees
+		Player.position.x = -Player.position.x
 	
 	ASprite.flip_h = velocity.x > 0
 	velocity.y = move_and_slide(velocity, UP).y

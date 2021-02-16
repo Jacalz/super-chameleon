@@ -38,21 +38,11 @@ rect = Rect2( -30, 0, 60, 20 )
 process_parent = true
 physics_process_parent = true
 
-[node name="FloorDetector" type="Node2D" parent="."]
-
-[node name="Left" type="RayCast2D" parent="FloorDetector"]
-modulate = Color( 0, 1, 0.0392157, 1 )
-position = Vector2( -55, 40 )
+[node name="FloorDetector" type="RayCast2D" parent="."]
+position = Vector2( -50, 40 )
 enabled = true
-cast_to = Vector2( 0, 10 )
+cast_to = Vector2( 0, 15 )
 collision_mask = 8
-
-[node name="Right" type="RayCast2D" parent="FloorDetector"]
-modulate = Color( 0, 1, 0.0392157, 1 )
-position = Vector2( 55, 40 )
-enabled = true
-cast_to = Vector2( 0, 10 )
-collision_mask = 2147483656
 
 [node name="KillerInstinct" type="Area2D" parent="."]
 
@@ -60,17 +50,10 @@ collision_mask = 2147483656
 modulate = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( -55.7638, 43.9623, 54.2375, 43.9623, 37.6812, -34.3294, 7.0941, -55.0949, -11.9877, -47.7989, -55.2025, 4.39556 )
 
-[node name="PlayerRight" type="RayCast2D" parent="KillerInstinct"]
+[node name="Player" type="RayCast2D" parent="KillerInstinct"]
 modulate = Color( 0.486275, 0.0941176, 0.0941176, 1 )
 position = Vector2( 40, 30 )
 rotation = -1.5708
-enabled = true
-cast_to = Vector2( 0, 200 )
-
-[node name="PlayerLeft" type="RayCast2D" parent="KillerInstinct"]
-modulate = Color( 0.486275, 0.0941176, 0.0941176, 1 )
-position = Vector2( -40, 30 )
-rotation = 1.5708
 enabled = true
 cast_to = Vector2( 0, 200 )
 [connection signal="body_entered" from="KillerInstinct" to="." method="_on_KillerInstinct_body_entered"]

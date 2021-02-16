@@ -1,7 +1,7 @@
 # Super Chameleon
 A 2D pixel art platformer inspired by Super Mario and made for a school project. In Super Chameleon, you play as a chameleon with abilities such as camouflaging and turning into a [Jackson's Chameleon](https://github.com/Jacalz/super-chameleon), with horns. The game has been created using only open source software.
 
-![image](https://user-images.githubusercontent.com/25466657/104724661-48b88b80-5731-11eb-9580-3f214ceb0188.png)
+![screenshot-20210215T152758](https://user-images.githubusercontent.com/25466657/107958065-c4f8f580-6fa1-11eb-8382-e4daffb408d4.png)
 
 ## Tools used
 The game has been developed and designed using the following open source software.

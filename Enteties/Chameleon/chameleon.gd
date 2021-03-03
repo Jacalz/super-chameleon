@@ -8,6 +8,7 @@ onready var sprite = $AnimatedSprite
 onready var camo = $Camouflage
 onready var shape = $CollisionShape2D.shape
 onready var evolve_timer = $EvolveTimer
+onready var evolve_sub_timer = $EvolveTimer/SubTimer
 
 var hidden = false
 
@@ -25,6 +26,19 @@ var velocity = Vector2()
 
 var evolve_anim = ""
 var flip_h = true
+
+func _on_Initial_timeout():
+	# Flicker 4 times
+	for i in 4:
+		sprite.modulate.a = 0.1
+		for j in 15:
+			yield(get_tree(), "idle_frame")
+
+		sprite.modulate.a = 1.0
+		for j in 15:
+			yield(get_tree(), "idle_frame")
+
+	evolve_sub_timer.start()
 
 func _on_Evolve_timeout():
 	shape.height = 45
@@ -86,3 +100,4 @@ func _physics_process(delta: float):
 	
 	if was_grounded == null || is_grounded != was_grounded:
 		emit_signal("on_grounded_updated", is_grounded)
+

@@ -6,4 +6,4 @@ func _on_Area2D_body_entered(body):
 			yield(get_tree().create_timer(0.25), "timeout")
 			assert(get_tree().reload_current_scene() == OK)
 		else:
-			 body.evolve_anim = ""
+			 body._on_unevolving()

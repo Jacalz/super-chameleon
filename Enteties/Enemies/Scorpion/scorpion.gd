@@ -41,7 +41,7 @@ func _on_KillerInstinct_body_entered(body):
 		elif body.flip_h == ASprite.flip_h: # Player is looking away if flip_h values are equal
 			ASprite.position.y += 15
 			ASprite.play("attack")
-			body.evolve_anim = ""
+			body._on_unevolving()
 			ASprite.position.y -= 15
 			ASprite.play("move")
 		else:

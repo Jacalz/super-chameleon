@@ -22,11 +22,6 @@ animations = [ {
 "name": "Idle_evolved",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Walk",
@@ -40,6 +35,11 @@ animations = [ {
 "frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "Idle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": false,
+"name": "Jump",
 "speed": 1.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 9 ) ],
@@ -185,6 +185,7 @@ margin_right = 12.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 6 )
 text = "  Exit to titlescreen  "
+
 [connection signal="on_grounded_updated" from="." to="Camera2D" method="_on_Chameleon_on_grounded_updated"]
 [connection signal="timeout" from="Camouflage/Timer" to="Camouflage" method="_on_Timer_timeout"]
 [connection signal="timeout" from="EvolveTimer" to="." method="_on_Initial_timeout"]

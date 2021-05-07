@@ -27,6 +27,10 @@ var velocity = Vector2()
 var evolve_anim = ""
 var flip_h = true
 
+func _on_unevolving():
+	evolve_timer.stop()
+	_on_Evolve_timeout()
+
 func _on_Initial_timeout():
 	# Flicker 4 times
 	for i in 4:

@@ -27,7 +27,7 @@ func _on_Area2D_body_entered(body):
 				assert(get_tree().reload_current_scene() == OK)
 		elif body.flip_h != ASprite.flip_h: # Player is looking away if flip_h values are not equal
 			ASprite.play("block")
-			body.evolve_anim = ""
+			body._on_unevolving()
 			ASprite.play("move")
 		else:
 			queue_free()

@@ -11,6 +11,9 @@ The game has been developed and designed using the following open source softwar
 - [Gimp](https://gimp.org/) - Retouching, cropping, and other minor asset editing
 - [Inkscape](https://inkscape.org/) - Asset prototyping and logo creation
 
+## Downloads
+Runnable binaries, for Linux, macOS and Windows are avaliable on the [release page](https://github.com/Jacalz/super-chameleon/releases).
+
 ## License
 
 - The code and the Godot project are shared under the `GPL-v3.0-or-later` license and was created by [Jacob Alzén](https://github.com/Jacalz).

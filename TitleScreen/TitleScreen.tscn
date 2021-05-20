@@ -106,7 +106,7 @@ margin_bottom = 560.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 2 )
-text = "Version 1.1
+text = "Version 1.1.1
 Ekeekalz-Studios"
 
 [node name="FadeIn" parent="." instance=ExtResource( 6 )]
